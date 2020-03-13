@@ -27,7 +27,7 @@ table.table-list tr:nth-of-type(even){
 
 nav {
     margin-bottom: 0px;
-    background-color: #19AD15;
+    background-color: #477FC1;
 }
 
 nav ul {
@@ -35,7 +35,7 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #19AD15;
+    background-color: #477FC1;
 
 }
 
@@ -54,7 +54,7 @@ nav li a {
 }
 
 nav li a:hover {
-    background-color: #189D1C;
+    background-color: #293E81;
     color: white;
 }
 
@@ -115,7 +115,7 @@ padding:15px;
 color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #19AD15;
+background: #477FC1;
 padding: 10px;
 border-radius: 5px;
 display: inline-block;
