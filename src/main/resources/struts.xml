@@ -17,9 +17,15 @@
 
 
 
-    <package name="webapp" namespace="/okurka" extends="struts-default">
-        <action name="welcome" class="cz.uhk.fim.actions.HelloWorldAction">
+    <package name="webapp" namespace="/" extends="struts-default">
+        <action name="error" class="cz.uhk.fim.actions.HelloWorldAction">
             <result name="success">/templates/error.html</result>
+        </action>
+        <action name="addTicket" class="cz.uhk.fim.actions.TicketAction">
+            <result name="success">/templates/addTicket.html</result>
+        </action>
+        <action name="" class="cz.uhk.fim.actions.TicketAction">
+            <result name="success">/templates/tickets.html</result>
         </action>
     </package>
 
