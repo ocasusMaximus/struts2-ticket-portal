@@ -13,23 +13,19 @@
     <constant name="struts.thymeleaf.cacheable" value="true"/>
     <constant name="struts.thymeleaf.cacheTtlMillis" value="3600000"/>
     <constant name="struts.thymeleaf.templateEngineName" value="default"/>
-    <constant name = "struts.devMode" value = "true" />
-
+    <constant name="struts.devMode" value="true"/>
 
 
     <package name="webapp" namespace="/" extends="struts-default">
-        <action name="error" class="cz.uhk.fim.actions.HelloWorldAction">
-            <result name="success">/templates/error.html</result>
-        </action>
-        <action name="addTicket" class="cz.uhk.fim.actions.TicketAction">
-            <result name="success">/templates/addTicket.html</result>
-        </action>
-        <action name="" class="cz.uhk.fim.actions.TicketAction">
+        <action name="tickets" class="cz.uhk.fim.actions.TicketAction" method="execute">
             <result name="success">/templates/tickets.html</result>
+            <result name="error">/templates/error.html</result>
+        </action>
+        <action name="addTicket" class="cz.uhk.fim.actions.AddAction" method="execute">
+            <result name="success">/templates/addTicket.html</result>
+            <result name="error">/templates/error.html</result>
         </action>
     </package>
-
-
 
 
 </struts>
