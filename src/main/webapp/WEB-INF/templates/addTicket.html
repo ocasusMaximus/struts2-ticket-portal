@@ -32,7 +32,15 @@
 
 <div class="form-part">
     <h1>Nová rezervace</h1>
-        <form action="#" th:action="@{/createTicket}" th:object="${ticket}" method="post">
+    <div>
+        AAA
+        <input type="text" name="userName" value="James Carrot" th:value="${user.name}" />
+
+        BBB
+        <p th:text="${#request.getParameter('yourParameter')}">Request Param</p>
+        CCC
+    </div>
+        <form action="#" th:action="@{createTicket}" th:object="${ticket}" method="post">
             <table class="form-table">
                 <tbody>
                 <tr>

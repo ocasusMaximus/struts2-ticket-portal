@@ -8,15 +8,22 @@
     <constant name="struts.objectFactory" value="spring"/>
     <constant name="struts.thymeleaf.templateMode" value="HTML5"/>
     <constant name="struts.thymeleaf.encoding" value="UTF-8"/>
-    <constant name="struts.thymeleaf.prefix" value="/templates"/>
+    <constant name="struts.thymeleaf.prefix" value="/templates/"/>
     <constant name="struts.thymeleaf.suffix" value=".html"/>
-    <constant name="struts.thymeleaf.cacheable" value="true"/>
+    <constant name="struts.thymeleaf.cacheable" value="false"/>
     <constant name="struts.thymeleaf.cacheTtlMillis" value="3600000"/>
     <constant name="struts.thymeleaf.templateEngineName" value="default"/>
     <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="commons,message" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
 
+    <package name="struts-thymeleaf" abstract="true" extends="struts-default">
+        <result-types>
+            <result-type name="thymeleaf" class="serendip.struts.plugins.thymeleaf.ThymeleafResult"/>
+        </result-types>
+    </package>
+    <package name="webapp" namespace="/" extends="struts-thymeleaf">
 
-    <package name="webapp" namespace="/" extends="struts-default">
         <action name="tickets" class="cz.uhk.fim.actions.TicketAction" method="execute">
             <result name="success">/templates/tickets.html</result>
             <result name="error">/templates/error.html</result>
@@ -25,6 +32,23 @@
             <result name="success">/templates/addTicket.html</result>
             <result name="error">/templates/error.html</result>
         </action>
+
+        <action name="updateTicket" method="update" class="cz.uhk.fim.actions.TicketAction">
+            <result name="success">/WEB-INF/templates/addTicket.html</result>
+        </action>
+        <action name="createTicket" method="create" class="cz.uhk.fim.actions.TicketAction">
+            <result name="success">/WEB-INF/templates/tickets.html</result>
+        </action>
+
+        <action name="deleteTicket" method="delete" class="cz.uhk.fim.actions.TicketAction">
+            <result name="success">/WEB-INF/templates/addTicket.html</result>
+        </action>
+
+        <action name="helloW" method="hello" class="cz.uhk.fim.actions.TicketAction">
+            <result name="success" type="thymeleaf" >/templates/index.html</result>
+        </action>
+
+
     </package>
 
 
