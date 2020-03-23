@@ -38,6 +38,15 @@ nav ul {
     background-color: #477FC1;
 
 }
+form {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    padding: 5px 25px 15px;
+
+}
 
 nav li {
     float: left;
@@ -90,6 +99,10 @@ nav li a:hover {
 }
 select {
  width: 100%;
+}
+input {
+    width: 50%;
+    margin: 5px 0;
 }
 
 .form-buttons input {

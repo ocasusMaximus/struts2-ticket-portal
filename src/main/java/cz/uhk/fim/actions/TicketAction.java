@@ -39,7 +39,7 @@ public class TicketAction extends ActionSupport implements ModelDriven<Ticket> {
     }
 
     public String hello(){
-        message = "Hello I'm Thymeleaf!";
+        message = "Hello I'm JSP!";
         return SUCCESS;
     }
     public String create(){

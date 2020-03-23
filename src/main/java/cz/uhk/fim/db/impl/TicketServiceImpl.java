@@ -40,7 +40,7 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public void removeTicketById(int id) {
-        ticketRepository.delete(id);
+        ticketRepository.deleteById(id);
     }
 
     @Override
