@@ -100,10 +100,10 @@ nav li a:hover {
 select {
  width: 100%;
 }
-input {
+/*input {
     width: 50%;
     margin: 5px 0;
-}
+}*/
 
 .form-buttons input {
     width: 50%;

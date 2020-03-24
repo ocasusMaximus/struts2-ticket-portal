@@ -7,43 +7,39 @@
 <struts>
     <constant name="struts.objectFactory" value="spring"/>
     <constant name="struts.devMode" value="true"/>
-    <constant name="struts.custom.i18n.resources" value="commons,message" />
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.custom.i18n.resources" value="commons,message"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
 
     <package name="webapp" namespace="/" extends="struts-default">
 
-        <action name="tickets" class="cz.uhk.fim.actions.TicketAction" method="execute">
-            <result name="success">/templates/tickets.html</result>
-            <result name="error">/templates/error.html</result>
+        <action name="tickets" method="listTickets" class="cz.uhk.fim.actions.ShowPage">
+            <result name="success">/WEB-INF/templates/tickets.jsp</result>
+            <result name="error">/WEB-INF/templates/error.jsp</result>
         </action>
-        <action name="addTicket" class="cz.uhk.fim.actions.AddTicket" method="execute">
-            <result name="success">/templates/addTicket.html</result>
-            <result name="error">/templates/error.html</result>
-        </action>
-
-        <action name="updateTicket" method="update" class="cz.uhk.fim.actions.TicketAction">
-            <result name="success">/templates/addTicket.html</result>
-        </action>
-        <action name="createTicket" method="create" class="cz.uhk.fim.actions.AddTicket">
-            <result name="success">/templates/tickets.html</result>
+        <action name="addTicket" method="listHalls" class="cz.uhk.fim.actions.ShowPage">
+            <result name="success">/WEB-INF/templates/addTicket.jsp</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
         </action>
 
-        <action name="deleteTicket" method="delete" class="cz.uhk.fim.actions.TicketAction">
-            <result name="success">/WEB-INF/templates/addTicket.html</result>
+        <action name="updateTicket" method="update" class="cz.uhk.fim.actions.TicketActionController">
+            <result name="success" type="redirect">tickets</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
+        </action>
+        <action name="createTicket" method="create" class="cz.uhk.fim.actions.TicketActionController">
+            <result name="success" type="redirect">tickets</result>
         </action>
 
-
-        <action name="hellojsp" method="hello" class="cz.uhk.fim.actions.TicketAction">
-            <result name="success" >/WEB-INF/templates/hello.jsp</result>
+        <action name="deleteTicket" method="delete" class="cz.uhk.fim.actions.TicketActionController">
+            <result name="success" type="redirect">tickets</result>
         </action>
 
-        <action name="showAddTicketPage" method="showAddTicket" class="cz.uhk.fim.actions.AddTicket">
-            <result name="success" >/WEB-INF/templates/addTicket.jsp</result>
+        <action name="deleteAllTickets" method="deleteAllTickets" class="cz.uhk.fim.actions.TicketActionController">
+            <result name="success" type="redirect">tickets</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
         </action>
 
 
     </package>
-
 
 
 </struts>
