@@ -21,5 +21,5 @@ public interface HallService {
 
     List<Hall> loadAllHalls();
 
-    int getIdOfHall(@ModelAttribute Ticket ticket);
+    int getIdOfHall(Ticket ticket);
 }

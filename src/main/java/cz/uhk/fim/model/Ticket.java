@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "TICKET", schema = "bakzahraja1")
 public class Ticket {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String movie;
     private String language;
@@ -19,6 +19,8 @@ public class Ticket {
     public Ticket(){
 
     }
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic
     @Column(name = "ID")
     public int getId() {
@@ -67,5 +69,16 @@ public class Ticket {
 
     public void setHall(String hall) {
         this.hall = hall;
+    }
+
+    @Override
+    public final String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", movie='" + movie + '\'' +
+                ", language='" + language + '\'' +
+                ", numberOfSeats=" + numberOfSeats +
+                ", hall='" + hall + '\'' +
+                '}';
     }
 }

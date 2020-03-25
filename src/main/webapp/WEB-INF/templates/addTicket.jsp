@@ -55,7 +55,7 @@
                           label="Sál"/>
             </tr>
             <tr>
-                <s:textfield class="form-field" name="ticket.numberOfSeats" min="1" label="Počet Míst"/>
+                <s:textfield class="form-field" name="ticket.numberOfSeats" type="number" min="1" label="Počet Míst"/>
             </tr>
             <s:submit class="button_a" value="Odeslat"/>
             <s:reset class="button_a" value="Reset"/>
@@ -71,7 +71,7 @@
 
             <s:hidden name="ticket.id"/>
             <tr>
-                <s:select class="form-field" name="ticket.name"
+                <s:select class="form-field" name="ticket.movie"
                           list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
                           headerKey=""
                           label="Film"/>
@@ -87,7 +87,7 @@
                           label="Sál"/>
             </tr>
             <tr>
-                <s:textfield class="form-field" name="ticket.numberOfSeats" min="1" label="Počet Míst"/>
+                <s:textfield class="form-field" name="ticket.numberOfSeats" type="number" min="1" label="Počet Míst"/>
             </tr>
             <s:submit class="button_a" value="Odeslat"/>
             <s:reset class="button_a" value="Reset"/>

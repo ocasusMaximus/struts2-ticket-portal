@@ -20,17 +20,22 @@
             <result name="success">/WEB-INF/templates/addTicket.jsp</result>
             <result name="error">/WEB-INF/templates/error.html</result>
         </action>
+        <action name="editTicket" class="cz.uhk.fim.actions.EditTicketAction" method="edit">
+            <result name="success">/WEB-INF/templates/addTicket.jsp</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
+        </action>
 
-        <action name="updateTicket" method="update" class="cz.uhk.fim.actions.TicketActionController">
+        <action name="updateTicket" method="update" class="cz.uhk.fim.actions.UpdateTicketAction">
             <result name="success" type="redirect">tickets</result>
             <result name="error">/WEB-INF/templates/error.html</result>
         </action>
         <action name="createTicket" method="create" class="cz.uhk.fim.actions.TicketActionController">
             <result name="success" type="redirect">tickets</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
         </action>
 
-        <action name="deleteTicket" method="delete" class="cz.uhk.fim.actions.TicketActionController">
-            <result name="success" type="redirect">tickets</result>
+        <action name="deleteTicket" class="cz.uhk.fim.actions.TicketActionController" method="delete">
+            <result name="input" type="redirect">tickets</result>
         </action>
 
         <action name="deleteAllTickets" method="deleteAllTickets" class="cz.uhk.fim.actions.TicketActionController">

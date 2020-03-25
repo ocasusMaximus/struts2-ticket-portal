@@ -50,21 +50,16 @@
                 <td><s:property value="numberOfSeats"/></td>
                 <td><s:property value="hall"/></td>
                 <td>
-                    <s:form method="post" action="deleteTicket" object="ticket">
-                        <s:hidden name="id" value="id"/>
-                        <s:hidden name="movie" value="movie"/>
-                        <s:hidden name="language" value="language"/>
-                        <s:hidden name="numberOfSeats" value="numberOfSeats"/>
-                        <s:hidden name="hall" value="hall"/>
+                    <s:form method="post" action="deleteTicket">
+                        <s:hidden name="id" value="%{id}"/>
+
                         <s:submit class="button_a" value="Smazat"/>
                     </s:form></td>
                 <td>
-                    <s:form method="post" action="updateTicket" object="ticket">
-                        <s:hidden name="id" value="id"/>
-                        <s:hidden name="movie" value="movie"/>
-                        <s:hidden name="language" value="language"/>
-                        <s:hidden name="numberOfSeats" value="numberOfSeats"/>
-                        <s:hidden name="hall" value="hall"/>
+                    <s:form method="get" action="editTicket" object="ticket">
+
+                        <s:hidden name="id" value="%{id}"/>
+
                         <s:submit class="button_a" value="Změnit"/>
                     </s:form></td>
 
