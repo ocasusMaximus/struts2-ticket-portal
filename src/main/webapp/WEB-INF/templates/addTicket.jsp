@@ -66,10 +66,10 @@
 </div>
 <div class="form-part">
     <h1>Úprava rezervace</h1>
-    <s:form action="updateTicket" method="post">
+    <s:form action="updateTicket">
         <table class="form-table">
 
-            <s:hidden name="ticket.id"/>
+            <s:hidden name="id"/>
             <tr>
                 <s:select class="form-field" name="ticket.movie"
                           list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"

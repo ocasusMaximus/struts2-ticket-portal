@@ -44,4 +44,13 @@ public class Hall {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    @Override
+    public final String toString() {
+        return "Hall{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", capacity=" + capacity +
+                '}';
+    }
 }

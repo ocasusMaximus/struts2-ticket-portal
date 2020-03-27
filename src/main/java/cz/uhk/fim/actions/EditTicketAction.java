@@ -16,7 +16,6 @@ public class EditTicketAction extends ActionSupport {
 
 
     private Ticket ticket;
-    private Hall updatedHall = new Hall();
     private int id;
     List<Hall> hallList;
 
@@ -33,6 +32,8 @@ public class EditTicketAction extends ActionSupport {
         ticket = ticketService.loadTicketById(id);
         return SUCCESS;
     }
+
+
 
 
     public Ticket getTicket() {

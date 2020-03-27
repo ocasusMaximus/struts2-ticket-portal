@@ -2,6 +2,7 @@ package cz.uhk.fim.actions;
 
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import cz.uhk.fim.db.HallService;
 import cz.uhk.fim.db.TicketService;
 import cz.uhk.fim.model.Hall;
@@ -10,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UpdateTicketAction extends ActionSupport {
+public class CreateTicketAction extends ActionSupport {
 
 
-    private Ticket ticket;
-    private int id;
 
+    private Ticket ticket = new Ticket();
+    private   Hall updatedHall = new Hall();
+
+    private  int id;
 
     @Autowired
     private TicketService ticketService;
@@ -23,22 +26,17 @@ public class UpdateTicketAction extends ActionSupport {
     private HallService hallService;
 
 
-    public String update() {
-        Ticket dbTicket = ticketService.loadTicketById(id);
-        int oldTicketNoS = dbTicket.getNumberOfSeats();
-        int oldIdOfHall = hallService.getIdOfHall(dbTicket);
+    public String create() {
+
         int idOfHall = hallService.getIdOfHall(ticket);
-        Hall oldHall = hallService.loadHallById(oldIdOfHall);
-        Hall updatedHall = hallService.loadHallById(idOfHall);
-        int updatedHallCapacity = updatedHall.getCapacity();
-        if (updatedHallCapacity >= ticket.getNumberOfSeats()) {
-            int capacity = oldHall.getCapacity() + oldTicketNoS;
-            oldHall.setCapacity(capacity);
-            ticket.setId(id);
-            ticketService.updateTicket(ticket);
-            updatedHall.setCapacity(updatedHallCapacity - ticket.getNumberOfSeats());
+        updatedHall = hallService.loadHallById(idOfHall);
+        int capacity = hallService.loadHallById(idOfHall).getCapacity();
+
+        if (capacity >= ticket.getNumberOfSeats()) {
+            ticketService.createTicket(ticket);
+            updatedHall.setCapacity(capacity - ticket.getNumberOfSeats());
             hallService.createHall(updatedHall);
-            hallService.createHall(oldHall);
+
             return SUCCESS;
 
         } else {
@@ -48,8 +46,17 @@ public class UpdateTicketAction extends ActionSupport {
     }
 
 
+
     public Ticket getTicket() {
         return ticket;
+    }
+
+    public Hall getUpdatedHall() {
+        return updatedHall;
+    }
+
+    public void setUpdatedHall(Hall updatedHall) {
+        this.updatedHall = updatedHall;
     }
 
     public void setTicket(Ticket ticket) {
@@ -64,7 +71,5 @@ public class UpdateTicketAction extends ActionSupport {
         this.id = id;
     }
 }
-
-
 
 

@@ -38,21 +38,7 @@ public class ShowPage extends ActionSupport {
         return SUCCESS;
     }
 
-    public TicketService getTicketService() {
-        return ticketService;
-    }
 
-    public void setTicketService(TicketService ticketService) {
-        this.ticketService = ticketService;
-    }
-
-    public HallService getHallService() {
-        return hallService;
-    }
-
-    public void setHallService(HallService hallService) {
-        this.hallService = hallService;
-    }
 
     public List<Hall> getHallList() {
         return hallList;

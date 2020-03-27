@@ -66,7 +66,6 @@
             </tr>
         </s:iterator>
         </tbody>
-        <!--  <td colspan="1" class="form-buttons"><input type="submit" value="Smazat Vse"/></td>-->
     </table>
 </div>
 <div id="deleteAllButton">
