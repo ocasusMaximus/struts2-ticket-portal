@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="commons,message"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+
+    <package name="webapp" namespace="/" extends="struts-default">
+
+        <action name="tickets" method="listTickets" class="cz.uhk.fim.actions.ShowPage">
+            <result name="success">/WEB-INF/templates/tickets.jsp</result>
+            <result name="error">/WEB-INF/templates/error.jsp</result>
+        </action>
+        <action name="addTicket" method="listHalls" class="cz.uhk.fim.actions.ShowPage">
+            <result name="success">/WEB-INF/templates/addTicket.jsp</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
+        </action>
+        <action name="editTicket" class="cz.uhk.fim.actions.EditTicketAction" method="edit">
+            <result name="success">/WEB-INF/templates/addTicket.jsp</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
+        </action>
+
+        <action name="updateTicket" method="update" class="cz.uhk.fim.actions.UpdateTicketAction">
+            <result name="success" type="redirect">tickets</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
+        </action>
+        <action name="createTicket" method="create" class="cz.uhk.fim.actions.CreateTicketAction">
+            <result name="success" type="redirect">tickets</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
+        </action>
+
+        <action name="deleteTicket" class="cz.uhk.fim.actions.DeleteTicketAction" method="delete">
+            <result name="success" type="redirect">tickets</result>
+        </action>
+
+        <action name="deleteAllTickets" method="deleteAllTickets" class="cz.uhk.fim.actions.DeleteTicketAction">
+            <result name="success" type="redirect">tickets</result>
+            <result name="error">/WEB-INF/templates/error.html</result>
+        </action>
+
+
+    </package>
+
+
+</struts>
