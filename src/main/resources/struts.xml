@@ -11,27 +11,34 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
 
     <package name="webapp" namespace="/" extends="struts-default">
+        <global-results>
+            <result name="error">/WEB-INF/templates/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error" />
+        </global-exception-mappings>
 
         <action name="tickets" method="listTickets" class="cz.uhk.fim.actions.ShowPage">
             <result name="success">/WEB-INF/templates/tickets.jsp</result>
-            <result name="error">/WEB-INF/templates/error.jsp</result>
+
         </action>
         <action name="addTicket" method="listHalls" class="cz.uhk.fim.actions.ShowPage">
             <result name="success">/WEB-INF/templates/addTicket.jsp</result>
-            <result name="error">/WEB-INF/templates/error.html</result>
+
         </action>
         <action name="editTicket" class="cz.uhk.fim.actions.EditTicketAction" method="edit">
             <result name="success">/WEB-INF/templates/addTicket.jsp</result>
-            <result name="error">/WEB-INF/templates/error.html</result>
+
         </action>
 
         <action name="updateTicket" method="update" class="cz.uhk.fim.actions.UpdateTicketAction">
             <result name="success" type="redirect">tickets</result>
-            <result name="error">/WEB-INF/templates/error.html</result>
+
         </action>
         <action name="createTicket" method="create" class="cz.uhk.fim.actions.CreateTicketAction">
             <result name="success" type="redirect">tickets</result>
-            <result name="error">/WEB-INF/templates/error.html</result>
+
         </action>
 
         <action name="deleteTicket" class="cz.uhk.fim.actions.DeleteTicketAction" method="delete">
@@ -40,11 +47,13 @@
 
         <action name="deleteAllTickets" method="deleteAllTickets" class="cz.uhk.fim.actions.DeleteTicketAction">
             <result name="success" type="redirect">tickets</result>
-            <result name="error">/WEB-INF/templates/error.html</result>
+
         </action>
 
 
     </package>
+
+
 
 
 </struts>

@@ -32,86 +32,104 @@
         </div>
     </div>
 </nav>
-<div class="form-part">
-    <h1>Nová rezervace</h1>
-    <s:form action="createTicket" method="post">
-        <table class="form-table">
+<div>
+
+
+    <s:form class="col-lg-6 offset-lg-3 " action="createTicket" method="post">
+
+        <s:hidden name="ticket.id"/>
+    <div class="row justify-content-center">
+        <h1>Nová rezervace</h1>
+        <s:select class="custom-select custom-select-sm mb-3" name="ticket.movie"
+                  list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
+                  headerKey=""
+                  label="Film"/>
+
+
+    </div>
+    <div class="row justify-content-center">
+        <s:select class="custom-select custom-select-sm mb-3" name="ticket.language" list="{'Angličtina','Čeština'}"
+                  headerKey=""
+                  label="Jazyk"/>
+
+    </div>
+    <div class="row justify-content-center">
+        <s:select class="custom-select custom-select-sm mb-3" name="ticket.hall" list="{'J2','J3'}"
+                  headerKey=""
+                  label="Sál"/>
+
+    </div>
+    <div class="row justify-content-center">
+        <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
+                     label="Počet Míst"/>
+    </div>
+    <div class="row justify-content-center">
+        <s:submit class="button_a" value="Odeslat"/>
+    </div>
+    <div class="row justify-content-center">
+        <s:reset class="button_a" value="Reset"/>
+    </div>
+
+    </s:form>
+    <div>
+        <s:form class="col-lg-6 offset-lg-3 " action="updateTicket" method="post">
 
             <s:hidden name="ticket.id"/>
-            <tr>
-                <s:select class="form-field" name="ticket.movie"
+            <div class="row justify-content-center">
+                <h1>Úprava rezervace</h1>
+                <s:select class="custom-select custom-select-sm mb-3" name="ticket.movie"
                           list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
                           headerKey=""
                           label="Film"/>
-            </tr>
-            <tr>
-                <s:select class="form-field" name="ticket.language" list="{'Angličtina','Čeština'}"
+
+
+            </div>
+            <div class="row justify-content-center">
+                <s:select class="custom-select custom-select-sm mb-3" name="ticket.language"
+                          list="{'Angličtina','Čeština'}"
                           headerKey=""
                           label="Jazyk"/>
-            </tr>
-            <tr>
-                <s:select class="form-field" name="ticket.hall" list="{'J2','J3'}"
+
+            </div>
+            <div class="row justify-content-center">
+                <s:select class="custom-select custom-select-sm mb-3" name="ticket.hall" list="{'J2','J3'}"
                           headerKey=""
                           label="Sál"/>
-            </tr>
-            <tr>
-                <s:textfield class="form-field" name="ticket.numberOfSeats" type="number" min="1" label="Počet Míst"/>
-            </tr>
+
+            </div>
+            <div class="row justify-content-center">
+                <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
+                             label="Počet Míst"/>
+            </div>
+            <div class="row justify-content-center">
             <s:submit class="button_a" value="Odeslat"/>
+            </div>
             <s:reset class="button_a" value="Reset"/>
+
+
+        </s:form>
+
+
+    </div>
+
+
+
+    <div>
+        <table class="table-list">
+            <thead>
+            <th>Sál</th>
+            <th>Kapacita</th>
+            </thead>
+            <tbody>
+            <s:iterator value="hallList">
+                <tr>
+                    <td><s:property value="name"/></td>
+                    <td><s:property value="capacity"/></td>
+                </tr>
+            </s:iterator>
+            </tbody>
+
         </table>
-    </s:form>
-
-    </form>
-</div>
-<div class="form-part">
-    <h1>Úprava rezervace</h1>
-    <s:form action="updateTicket">
-        <table class="form-table">
-
-            <s:hidden name="id"/>
-            <tr>
-                <s:select class="form-field" name="ticket.movie"
-                          list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
-                          headerKey=""
-                          label="Film"/>
-            </tr>
-            <tr>
-                <s:select class="form-field" name="ticket.language" list="{'Angličtina','Čeština'}"
-                          headerKey=""
-                          label="Jazyk"/>
-            </tr>
-            <tr>
-                <s:select class="form-field" name="ticket.hall" list="{'J2','J3'}"
-                          headerKey=""
-                          label="Sál"/>
-            </tr>
-            <tr>
-                <s:textfield class="form-field" name="ticket.numberOfSeats" type="number" min="1" label="Počet Míst"/>
-            </tr>
-            <s:submit class="button_a" value="Odeslat"/>
-            <s:reset class="button_a" value="Reset"/>
-        </table>
-    </s:form>
-
-    </form>
-</div>
-<div>
-    <table class="table-list">
-        <thead>
-        <th>Sál</th>
-        <th>Kapacita</th>
-        </thead>
-        <tbody>
-        <s:iterator value="hallList">
-            <tr>
-                <td><s:property value="name"/></td>
-                <td><s:property value="capacity"/></td>
-            </tr>
-        </s:iterator>
-        </tbody>
-
-    </table>
-</div>
+    </div>
 </body>
 </html>

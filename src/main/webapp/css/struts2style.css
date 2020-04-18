@@ -3,7 +3,7 @@ body {
     width: 100%;
     font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
 }
-
+/* tabulka ---------------------------------------------------------------------------*/
 table.table-list {
     width: 100%;
     margin:  0 auto;
@@ -24,7 +24,7 @@ table.table-list tr:nth-of-type(even){
     background-color: #f3f3f3;
 
 }
-
+/* navbar  ----------------------------------------------------------------------------- */
 nav {
     margin-bottom: 0px;
     background-color: #477FC1;
@@ -38,15 +38,7 @@ nav ul {
     background-color: #477FC1;
 
 }
-form {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    padding: 5px 25px 15px;
 
-}
 
 nav li {
     float: left;
@@ -66,59 +58,24 @@ nav li a:hover {
     background-color: #293E81;
     color: white;
 }
-
-.form-part {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    padding: 5px 25px 15px;
-}
-
-.form-part h1 {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.form-title {
-    min-width: 75px;
-    font-size: 15px;
-    font-weight: lighter;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.form-field {
-    width: 100%;
-}
-
-.form-field input {
-    width: 100%;
-    margin-left: -10px;
-}
-select {
- width: 100%;
-}
-/*input {
-    width: 50%;
-    margin: 5px 0;
-}*/
-
-.form-buttons input {
-    width: 50%;
-    margin: 5px 0;
-}
 nav li a img {
     vertical-align:middle;
 }
+/*-----------------------------------------------------------------------*/
+
+
+input {
+    
+    margin: 5px 0;
+}
+
+
+
 span{
 color:white;
 }
 
-.ticketProps{
-    color: black;
-}
+/* buttony ----------------------------------------------------------------------------------------------------*/
 #deleteAllButton{
 text-align:center;
 padding:15px;

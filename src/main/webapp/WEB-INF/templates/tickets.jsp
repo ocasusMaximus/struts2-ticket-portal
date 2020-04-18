@@ -49,19 +49,20 @@
                 <td><s:property value="language"/></td>
                 <td><s:property value="numberOfSeats"/></td>
                 <td><s:property value="hall"/></td>
-                <td>
+                <td >
                     <s:form method="post" action="deleteTicket">
                         <s:hidden name="id" value="%{id}"/>
 
                         <s:submit class="button_a" value="Smazat"/>
                     </s:form></td>
-                <td>
+                <td >
                     <s:form method="get" action="editTicket" object="ticket">
 
                         <s:hidden name="id" value="%{id}"/>
 
                         <s:submit class="button_a" value="Změnit"/>
-                    </s:form></td>
+                    </s:form>
+                </td>
 
             </tr>
         </s:iterator>
