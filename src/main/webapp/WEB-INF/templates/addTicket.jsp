@@ -32,86 +32,81 @@
         </div>
     </div>
 </nav>
-<div>
 
 
-    <s:form class="col-lg-6 offset-lg-3 " action="createTicket" method="post">
+    <div class="row justify-content-center">
+        <s:form   action="createTicket" method="post">
+
+            <s:hidden name="ticket.id"/>
+            <div class="row justify-content-center">
+                <h1>Nová rezervace</h1>
+            </div>
+
+            <s:select class="custom-select custom-select-sm mb-3" name="ticket.movie"
+                      list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
+                      headerKey=""
+                      label="Film"/>
+
+
+            <s:select class="custom-select custom-select-sm mb-3" name="ticket.language" list="{'Angličtina','Čeština'}"
+                      headerKey=""
+                      label="Jazyk"/>
+
+
+            <s:select class="custom-select custom-select-sm mb-3" name="ticket.hall" list="{'J2','J3'}"
+                      headerKey=""
+                      label="Sál"/>
+
+
+            <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
+                         label="Počet Míst"/>
+
+             <div class="row justify-content-center">
+                <s:submit class="button_a" value="Odeslat"/>
+
+
+                <s:reset class="button_a" value="Reset"/>
+            </div>
+
+        </s:form>
+    </div>
+
+<div class="row justify-content-center">
+    <s:form   action="updateTicket" method="post">
 
         <s:hidden name="ticket.id"/>
-    <div class="row justify-content-center">
-        <h1>Nová rezervace</h1>
+        <div class="row justify-content-center">
+            <h1>Nová rezervace</h1>
+        </div>
+
         <s:select class="custom-select custom-select-sm mb-3" name="ticket.movie"
                   list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
                   headerKey=""
                   label="Film"/>
 
 
-    </div>
-    <div class="row justify-content-center">
         <s:select class="custom-select custom-select-sm mb-3" name="ticket.language" list="{'Angličtina','Čeština'}"
                   headerKey=""
                   label="Jazyk"/>
 
-    </div>
-    <div class="row justify-content-center">
+
         <s:select class="custom-select custom-select-sm mb-3" name="ticket.hall" list="{'J2','J3'}"
                   headerKey=""
                   label="Sál"/>
 
-    </div>
-    <div class="row justify-content-center">
+
         <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
                      label="Počet Míst"/>
-    </div>
-    <div class="row justify-content-center">
-        <s:submit class="button_a" value="Odeslat"/>
-    </div>
-    <div class="row justify-content-center">
-        <s:reset class="button_a" value="Reset"/>
-    </div>
+
+        <div class="row justify-content-center">
+            <s:submit class="button_a" value="Odeslat"/>
+
+
+            <s:reset class="button_a" value="Reset"/>
+        </div>
 
     </s:form>
-    <div>
-        <s:form class="col-lg-6 offset-lg-3 " action="updateTicket" method="post">
-
-            <s:hidden name="ticket.id"/>
-            <div class="row justify-content-center">
-                <h1>Úprava rezervace</h1>
-                <s:select class="custom-select custom-select-sm mb-3" name="ticket.movie"
-                          list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
-                          headerKey=""
-                          label="Film"/>
-
-
-            </div>
-            <div class="row justify-content-center">
-                <s:select class="custom-select custom-select-sm mb-3" name="ticket.language"
-                          list="{'Angličtina','Čeština'}"
-                          headerKey=""
-                          label="Jazyk"/>
-
-            </div>
-            <div class="row justify-content-center">
-                <s:select class="custom-select custom-select-sm mb-3" name="ticket.hall" list="{'J2','J3'}"
-                          headerKey=""
-                          label="Sál"/>
-
-            </div>
-            <div class="row justify-content-center">
-                <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
-                             label="Počet Míst"/>
-            </div>
-            <div class="row justify-content-center">
-            <s:submit class="button_a" value="Odeslat"/>
-            </div>
-            <s:reset class="button_a" value="Reset"/>
-
-
-        </s:form>
-
-
-    </div>
-
+</div>
 
 
     <div>

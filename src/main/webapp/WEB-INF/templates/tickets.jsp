@@ -49,14 +49,14 @@
                 <td><s:property value="language"/></td>
                 <td><s:property value="numberOfSeats"/></td>
                 <td><s:property value="hall"/></td>
-                <td >
-                    <s:form method="post" action="deleteTicket">
-                        <s:hidden name="id" value="%{id}"/>
+                <td  >
+                    <s:form class="submit-form" method="post"  action="deleteTicket">
+                       <!-- <s:hidden name="id" value="%{id}"/>-->
 
                         <s:submit class="button_a" value="Smazat"/>
                     </s:form></td>
-                <td >
-                    <s:form method="get" action="editTicket" object="ticket">
+                <td>
+                    <s:form method="get" action="editTicket" class="submit-form" object="ticket">
 
                         <s:hidden name="id" value="%{id}"/>
 
@@ -69,10 +69,13 @@
         </tbody>
     </table>
 </div>
-<div id="deleteAllButton">
+<div class="deleteAllButton">
     <s:form method="post" action="deleteAllTickets">
         <button class="button_a" type="submit">Smazat Vse</button>
     </s:form>
 </div>
+
+
+
 </body>
 </html>

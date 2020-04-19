@@ -17,13 +17,24 @@ table.table-list th {
 
 table.table-list td {
     padding: 5px;
+    justify-content: center;
+    text-align: center;
 
-    /*border-bottom: 1px solid #444444;*/
+    /*border: 1px solid #444444;*/
 }
+
 table.table-list tr:nth-of-type(even){
     background-color: #f3f3f3;
 
 }
+h1{
+    font-size: 20px;
+    font-weight: 400;
+    padding: 1rem;
+}
+
+
+
 /* navbar  ----------------------------------------------------------------------------- */
 nav {
     margin-bottom: 0px;
@@ -61,22 +72,37 @@ nav li a:hover {
 nav li a img {
     vertical-align:middle;
 }
+span {
+    color: white;
+}
 /*-----------------------------------------------------------------------*/
 
 
-input {
-    
-    margin: 5px 0;
+
+.submit-form{
+    display: flex;
+    justify-content: center;
+
+
+}
+.submit-form input text{
+    margin: 2rem;
+}
+.formButton{
+    display: flex;
+    justify-content: center;
+    padding: 2px 4px;
+
+}
+.formButton input {
+    width: 100%;
+    margin: 2px 0;
+
 }
 
 
-
-span{
-color:white;
-}
-
-/* buttony ----------------------------------------------------------------------------------------------------*/
-#deleteAllButton{
+    /* buttony ----------------------------------------------------------------------------------------------------*/
+.deleteAllButton{
 text-align:center;
 padding:15px;
 }
@@ -89,6 +115,7 @@ background: #477FC1;
 padding: 10px;
 border-radius: 5px;
 display: inline-block;
+    justify-content: center;
 border: none;
 transition: all 0.4s ease 0s;
 }
