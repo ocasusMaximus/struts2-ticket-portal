@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
-        <a href="${pageContext.request.contextPath}/tickets" class="navbar-brand">
+        <a href="${pageContext.request.contextPath}" class="navbar-brand">
             <!-- Logo Image -->
             <img src="/images/strut2-logo.png" width="55" height="40" alt="">
             <span class="text-uppercase font-weight-bold">Apache Struts2</span>
@@ -24,7 +24,7 @@
 
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="${pageContext.request.contextPath}/tickets" class="nav-link">Seznam
+                <li class="nav-item active"><a href="${pageContext.request.contextPath}/" class="nav-link">Seznam
                     rezervací</a></li>
                 <li class="nav-item"><a href="${pageContext.request.contextPath}/addTicket" class="nav-link">Nová
                     rezervace</a></li>
@@ -50,8 +50,8 @@
                 <td><s:property value="numberOfSeats"/></td>
                 <td><s:property value="hall"/></td>
                 <td  >
-                    <s:form class="submit-form" method="post"  action="deleteTicket">
-                       <!-- <s:hidden name="id" value="%{id}"/>-->
+                    <s:form class="submit-form" method="post"  action="deleteTicket" object="ticket">
+                       <s:hidden name="id" value="%{id}"/>
 
                         <s:submit class="button_a" value="Smazat"/>
                     </s:form></td>

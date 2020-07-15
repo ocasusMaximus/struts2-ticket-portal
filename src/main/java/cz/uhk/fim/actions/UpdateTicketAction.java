@@ -26,19 +26,36 @@ public class UpdateTicketAction extends ActionSupport {
     public String update() {
         Ticket dbTicket = ticketService.loadTicketById(id);
         int oldTicketNoS = dbTicket.getNumberOfSeats();
+
         int oldIdOfHall = hallService.getIdOfHall(dbTicket);
         int idOfHall = hallService.getIdOfHall(ticket);
+
         Hall oldHall = hallService.loadHallById(oldIdOfHall);
         Hall updatedHall = hallService.loadHallById(idOfHall);
-        int updatedHallCapacity = updatedHall.getCapacity();
-        if (updatedHallCapacity >= ticket.getNumberOfSeats()) {
-            int capacity = oldHall.getCapacity() + oldTicketNoS;
-            oldHall.setCapacity(capacity);
+
+        int capacity;
+        if (oldHall.getId() != updatedHall.getId()){
+            capacity = updatedHall.getCapacity();
+        } else{
+            capacity = oldHall.getCapacity() + oldTicketNoS;
+        }
+
+        if (capacity >= ticket.getNumberOfSeats()) {
+
             ticket.setId(id);
             ticketService.updateTicket(ticket);
-            updatedHall.setCapacity(updatedHallCapacity - ticket.getNumberOfSeats());
+
+            if (oldHall.getId() != updatedHall.getId())
+            {
+                int oldCapacity = oldHall.getCapacity() + oldTicketNoS;
+                oldHall.setCapacity(oldCapacity);
+                hallService.createHall(oldHall);
+            }
+
+            updatedHall.setCapacity(capacity- ticket.getNumberOfSeats());
             hallService.createHall(updatedHall);
-            hallService.createHall(oldHall);
+
+
             return SUCCESS;
 
         } else {

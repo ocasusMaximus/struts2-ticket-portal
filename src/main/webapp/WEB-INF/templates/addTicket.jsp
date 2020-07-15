@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
-        <a href="${pageContext.request.contextPath}/tickets" class="navbar-brand">
+        <a href="${pageContext.request.contextPath}" class="navbar-brand">
             <!-- Logo Image -->
             <img src="/images/strut2-logo.png" width="55" height="40" alt="">
             <span class="text-uppercase font-weight-bold">Apache Struts2</span>
@@ -24,7 +24,7 @@
 
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="${pageContext.request.contextPath}/tickets" class="nav-link">Seznam
+                <li class="nav-item active"><a href="${pageContext.request.contextPath}/" class="nav-link">Seznam
                     rezervací</a></li>
                 <li class="nav-item"><a href="${pageContext.request.contextPath}/addTicket" class="nav-link">Nová
                     rezervace</a></li>
@@ -52,14 +52,16 @@
                       headerKey=""
                       label="Jazyk"/>
 
+            <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
+                         label="Počet Míst"/>
+
 
             <s:select class="custom-select custom-select-sm mb-3" name="ticket.hall" list="{'J2','J3'}"
                       headerKey=""
                       label="Sál"/>
 
 
-            <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
-                         label="Počet Míst"/>
+
 
              <div class="row justify-content-center">
                 <s:submit class="button_a" value="Odeslat"/>
@@ -74,9 +76,9 @@
 <div class="row justify-content-center">
     <s:form   action="updateTicket" method="post">
 
-        <s:hidden name="ticket.id"/>
+        <s:hidden name="id"/>
         <div class="row justify-content-center">
-            <h1>Nová rezervace</h1>
+            <h1>Úprava rezervace</h1>
         </div>
 
         <s:select class="custom-select custom-select-sm mb-3" name="ticket.movie"

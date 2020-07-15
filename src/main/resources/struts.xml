@@ -6,7 +6,7 @@
 
 <struts>
     <constant name="struts.objectFactory" value="spring"/>
-    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.devMode" value="false"/>
     <constant name="struts.custom.i18n.resources" value="commons,message"/>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
 
@@ -19,7 +19,7 @@
             <exception-mapping exception="java.lang.Exception" result="error" />
         </global-exception-mappings>
 
-        <action name="tickets" method="listTickets" class="cz.uhk.fim.actions.ShowPage">
+        <action name="" method="listTickets" class="cz.uhk.fim.actions.ShowPage">
             <result name="success">/WEB-INF/templates/tickets.jsp</result>
 
         </action>
@@ -38,7 +38,6 @@
         </action>
         <action name="createTicket" method="create" class="cz.uhk.fim.actions.CreateTicketAction">
             <result name="success" type="redirect">tickets</result>
-
         </action>
 
         <action name="deleteTicket" class="cz.uhk.fim.actions.DeleteTicketAction" method="delete">
