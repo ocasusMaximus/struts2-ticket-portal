@@ -43,7 +43,7 @@
 </div>
 
 <div class="deleteAllButton">
-    <s:form method="get" action="addTicket">
+    <s:form method="get" action="">
         <button class="button_a" type="submit">Zpět</button>
     </s:form>
 </div>
