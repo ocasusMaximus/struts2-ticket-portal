@@ -28,7 +28,7 @@
 
         </action>
         <action name="editTicket" class="cz.uhk.fim.actions.EditTicketAction" method="edit">
-            <result name="success">/WEB-INF/templates/addTicket.jsp</result>
+            <result name="success">/WEB-INF/templates/editTicket.jsp</result>
 
         </action>
 
