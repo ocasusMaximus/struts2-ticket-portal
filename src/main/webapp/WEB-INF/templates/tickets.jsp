@@ -4,18 +4,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Title</title>
+    <title>Apache Struts 2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/struts2style.css"/>
+    <link rel="icon" type="image/svg" href="/images/strut2-logo.png"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
-        <a href="${pageContext.request.contextPath}" class="navbar-brand">
+        <a href="${pageContext.request.contextPath}/" class="navbar-brand">
             <!-- Logo Image -->
             <img src="/images/strut2-logo.png" width="55" height="40" alt="">
-            <span class="text-uppercase font-weight-bold">Apache Struts2</span>
+            <span class="text-uppercase font-weight-bold">Apache Struts 2</span>
         </a>
 
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

@@ -33,19 +33,19 @@
         </action>
 
         <action name="updateTicket" method="update" class="cz.uhk.fim.actions.UpdateTicketAction">
-            <result name="success" type="redirect">tickets</result>
+            <result name="success" type="redirect">/</result>
 
         </action>
         <action name="createTicket" method="create" class="cz.uhk.fim.actions.CreateTicketAction">
-            <result name="success" type="redirect">tickets</result>
+            <result name="success" type="redirect">/</result>
         </action>
 
         <action name="deleteTicket" class="cz.uhk.fim.actions.DeleteTicketAction" method="delete">
-            <result name="success" type="redirect">tickets</result>
+            <result name="success" type="redirect">/</result>
         </action>
 
         <action name="deleteAllTickets" method="deleteAllTickets" class="cz.uhk.fim.actions.DeleteTicketAction">
-            <result name="success" type="redirect">tickets</result>
+            <result name="success" type="redirect">/</result>
 
         </action>
 

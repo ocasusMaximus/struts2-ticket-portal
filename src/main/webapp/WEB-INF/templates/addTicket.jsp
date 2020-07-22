@@ -4,18 +4,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Title</title>
+    <title>Apache Struts 2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/struts2style.css"/>
+    <link rel="icon" type="image/svg" href="/images/strut2-logo.png"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
-        <a href="${pageContext.request.contextPath}" class="navbar-brand">
+        <a href="${pageContext.request.contextPath}/" class="navbar-brand">
             <!-- Logo Image -->
             <img src="/images/strut2-logo.png" width="55" height="40" alt="">
-            <span class="text-uppercase font-weight-bold">Apache Struts2</span>
+            <span class="text-uppercase font-weight-bold">Apache Struts 2</span>
         </a>
 
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -37,37 +38,38 @@
     <div class="row justify-content-center">
         <s:form   action="createTicket" method="post">
 
-            <s:hidden name="ticket.id"/>
+
             <div class="row justify-content-center">
                 <h1>Nová rezervace</h1>
             </div>
 
-            <s:select class="custom-select custom-select-sm mb-3" name="ticket.movie"
-                      list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
-                      headerKey=""
-                      label="Film"/>
+            <s:hidden name="ticket.id"/>
+            <label>Film: </label>
+            <select class="custom-select custom-select-sm mb-3" name="ticket.movie">
+                <option value="Star Wars: Pomsta Sithů">Star Wars: Pomsta Sithů</option>
+                <option value="Avengers Endgame">Avengers Endgame</option>
+                <option value="Pulp Fiction">Pulp Fiction</option>
+                <option value="John Wick">John Wick</option>
+            </select>
+            <label>Jazyk: </label>
+            <select class="custom-select custom-select-sm mb-3" name="ticket.language">
+                <option value="Angličtina">Angličtina</option>
+                <option value="Čeština">Čeština</option>
+            </select>
+            <label>Sál: </label>
+            <select class="custom-select custom-select-sm mb-3" name="ticket.hall">
+                <option value="J2">J2</option>
+                <option value="J3">J3</option>
+            </select>
+            <label>Počet míst: </label>
+            <input class="form-control form-control-sm" min="1" required name="ticket.numberOfSeats"
+                   type="number">
+            <div class="row justify-content-center">
+                <input type="submit" class="button_b" value="Odeslat"/>
+            </div>
+            <div class="row justify-content-center">
+                <input type="reset" class="button_b" value="Reset"/>
 
-
-            <s:select class="custom-select custom-select-sm mb-3" name="ticket.language" list="{'Angličtina','Čeština'}"
-                      headerKey=""
-                      label="Jazyk"/>
-
-            <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
-                         label="Počet Míst"/>
-
-
-            <s:select class="custom-select custom-select-sm mb-3" name="ticket.hall" list="{'J2','J3'}"
-                      headerKey=""
-                      label="Sál"/>
-
-
-
-
-             <div class="row justify-content-center">
-                <s:submit class="button_a" value="Odeslat"/>
-
-
-                <s:reset class="button_a" value="Reset"/>
             </div>
 
         </s:form>
@@ -76,35 +78,38 @@
 <div class="row justify-content-center">
     <s:form   action="updateTicket" method="post">
 
-        <s:hidden name="id"/>
+
         <div class="row justify-content-center">
             <h1>Úprava rezervace</h1>
         </div>
 
-        <s:select class="custom-select custom-select-sm mb-3" name="ticket.movie"
-                  list="{'Star Wars: Pomsta sithů','Avengers: Endgame','Pulp Fiction', 'John Wick'}"
-                  headerKey=""
-                  label="Film"/>
-
-
-        <s:select class="custom-select custom-select-sm mb-3" name="ticket.language" list="{'Angličtina','Čeština'}"
-                  headerKey=""
-                  label="Jazyk"/>
-
-
-        <s:select class="custom-select custom-select-sm mb-3" name="ticket.hall" list="{'J2','J3'}"
-                  headerKey=""
-                  label="Sál"/>
-
-
-        <s:textfield class="form-control form-control-sm" name="ticket.numberOfSeats" type="number" min="1"
-                     label="Počet Míst"/>
-
+        <s:hidden name="id"/>
+        <label>Film: </label>
+        <select class="custom-select custom-select-sm mb-3" name="ticket.movie">
+            <option value="Star Wars: Pomsta Sithů">Star Wars: Pomsta Sithů</option>
+            <option value="Avengers Endgame">Avengers Endgame</option>
+            <option value="Pulp Fiction">Pulp Fiction</option>
+            <option value="John Wick">John Wick</option>
+        </select>
+        <label>Jazyk: </label>
+        <select class="custom-select custom-select-sm mb-3" name="ticket.language">
+            <option value="Angličtina">Angličtina</option>
+            <option value="Čeština">Čeština</option>
+        </select>
+        <label>Sál: </label>
+        <select class="custom-select custom-select-sm mb-3" name="ticket.hall">
+            <option value="J2">J2</option>
+            <option value="J3">J3</option>
+        </select>
+        <label>Počet míst: </label>
+        <input class="form-control form-control-sm" min="1" required name="ticket.numberOfSeats"
+               type="number">
         <div class="row justify-content-center">
-            <s:submit class="button_a" value="Odeslat"/>
+            <input type="submit" class="button_b" value="Odeslat"/>
+        </div>
+        <div class="row justify-content-center">
+            <input type="reset" class="button_b" value="Reset"/>
 
-
-            <s:reset class="button_a" value="Reset"/>
         </div>
 
     </s:form>
