@@ -33,12 +33,27 @@ public class ShowPage extends ActionSupport {
         return SUCCESS;
     }
     public String listHalls(){
+        initHalls();
         hallService.loadAllHalls();
         hallList = hallService.loadAllHalls();
         return SUCCESS;
     }
 
+    private void initHalls() {
+        if (hallService.loadAllHalls().size() == 0) {
+            Hall j2 = new Hall();
+            j2.setId(1);
+            j2.setCapacity(100);
+            j2.setName("J2");
+            Hall j3 = new Hall();
+            j3.setId(2);
+            j3.setCapacity(100);
+            j3.setName("J3");
 
+            hallService.createHall(j2);
+            hallService.createHall(j3);
+        }
+    }
 
     public List<Hall> getHallList() {
         return hallList;
