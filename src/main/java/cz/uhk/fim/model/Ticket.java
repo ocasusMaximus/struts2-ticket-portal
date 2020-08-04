@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "TICKET")
 public class Ticket {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String movie;
     private String language;

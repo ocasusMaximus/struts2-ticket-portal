@@ -2,7 +2,6 @@ package cz.uhk.fim.actions;
 
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import cz.uhk.fim.db.HallService;
 import cz.uhk.fim.db.TicketService;
 import cz.uhk.fim.model.Hall;

@@ -26,7 +26,6 @@ public class DeleteTicketAction extends ActionSupport {
 
 
     public String delete() {
-        System.out.println("Id: " + id);
         Ticket dbticket = ticketService.loadTicketById(id);
         int tickNoS = dbticket.getNumberOfSeats();
         int idOfHall = hallService.getIdOfHall(dbticket);
