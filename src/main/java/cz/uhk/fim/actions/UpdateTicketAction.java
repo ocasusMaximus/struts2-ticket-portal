@@ -34,9 +34,9 @@ public class UpdateTicketAction extends ActionSupport {
         Hall updatedHall = hallService.loadHallById(idOfHall);
 
         int capacity;
-        if (oldHall.getId() != updatedHall.getId()){
+        if (oldHall.getId() != updatedHall.getId()) {
             capacity = updatedHall.getCapacity();
-        } else{
+        } else {
             capacity = oldHall.getCapacity() + oldTicketNoS;
         }
 
@@ -45,14 +45,13 @@ public class UpdateTicketAction extends ActionSupport {
             ticket.setId(id);
             ticketService.updateTicket(ticket);
 
-            if (oldHall.getId() != updatedHall.getId())
-            {
+            if (oldHall.getId() != updatedHall.getId()) {
                 int oldCapacity = oldHall.getCapacity() + oldTicketNoS;
                 oldHall.setCapacity(oldCapacity);
                 hallService.createHall(oldHall);
             }
 
-            updatedHall.setCapacity(capacity- ticket.getNumberOfSeats());
+            updatedHall.setCapacity(capacity - ticket.getNumberOfSeats());
             hallService.createHall(updatedHall);
 
 

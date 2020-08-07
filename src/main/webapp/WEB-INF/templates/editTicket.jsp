@@ -14,7 +14,6 @@
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
         <a href="${pageContext.request.contextPath}/" class="navbar-brand">
-            <!-- Logo Image -->
             <img src="/images/strut2-logo.png" width="55" height="40" alt="">
             <span class="text-uppercase font-weight-bold">Apache Struts 2</span>
         </a>
@@ -34,7 +33,7 @@
     </div>
 </nav>
 <div class="row justify-content-center">
-    <s:form   action="updateTicket" method="post">
+    <s:form action="updateTicket" method="post">
 
 
         <div class="row justify-content-center">
@@ -74,22 +73,22 @@
 </div>
 
 
-    <div>
-        <table class="table-list">
-            <thead>
-            <th>Sál</th>
-            <th>Kapacita</th>
-            </thead>
-            <tbody>
-            <s:iterator value="hallList">
-                <tr>
-                    <td><s:property value="name"/></td>
-                    <td><s:property value="capacity"/></td>
-                </tr>
-            </s:iterator>
-            </tbody>
+<div>
+    <table class="table-list">
+        <thead>
+        <th>Sál</th>
+        <th>Kapacita</th>
+        </thead>
+        <tbody>
+        <s:iterator value="hallList">
+            <tr>
+                <td><s:property value="name"/></td>
+                <td><s:property value="capacity"/></td>
+            </tr>
+        </s:iterator>
+        </tbody>
 
-        </table>
-    </div>
+    </table>
+</div>
 </body>
 </html>

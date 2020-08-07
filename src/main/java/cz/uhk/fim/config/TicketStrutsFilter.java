@@ -10,5 +10,4 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter("/*")
 public class TicketStrutsFilter extends StrutsPrepareAndExecuteFilter {
 
-
 }

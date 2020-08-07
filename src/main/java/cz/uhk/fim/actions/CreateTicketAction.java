@@ -13,11 +13,10 @@ import org.springframework.stereotype.Component;
 public class CreateTicketAction extends ActionSupport {
 
 
-
     private Ticket ticket = new Ticket();
-    private   Hall updatedHall = new Hall();
+    private Hall updatedHall = new Hall();
 
-    private  int id;
+    private int id;
 
     @Autowired
     private TicketService ticketService;
@@ -43,7 +42,6 @@ public class CreateTicketAction extends ActionSupport {
         }
 
     }
-
 
 
     public Ticket getTicket() {

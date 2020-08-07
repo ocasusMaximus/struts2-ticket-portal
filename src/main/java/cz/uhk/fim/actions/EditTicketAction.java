@@ -34,8 +34,6 @@ public class EditTicketAction extends ActionSupport {
     }
 
 
-
-
     public Ticket getTicket() {
         return ticket;
     }
@@ -51,6 +49,7 @@ public class EditTicketAction extends ActionSupport {
     public void setId(int id) {
         this.id = id;
     }
+
     public List<Hall> getHallList() {
         return hallList;
     }

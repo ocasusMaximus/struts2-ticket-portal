@@ -27,12 +27,13 @@ public class ShowPage extends ActionSupport {
         return SUCCESS;
     }
 
-    public String listTickets(){
+    public String listTickets() {
         ticketService.loadAllTickets();
         ticketList = ticketService.loadAllTickets();
         return SUCCESS;
     }
-    public String listHalls(){
+
+    public String listHalls() {
         initHalls();
         hallService.loadAllHalls();
         hallList = hallService.loadAllHalls();

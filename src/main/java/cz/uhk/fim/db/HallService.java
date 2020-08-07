@@ -3,7 +3,6 @@ package cz.uhk.fim.db;
 
 import cz.uhk.fim.model.Hall;
 import cz.uhk.fim.model.Ticket;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 

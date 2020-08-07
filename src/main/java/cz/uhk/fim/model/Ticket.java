@@ -15,10 +15,10 @@ public class Ticket {
     private String hall;
 
 
-
-    public Ticket(){
+    public Ticket() {
 
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic

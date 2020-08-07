@@ -49,7 +49,8 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public void deleteAllTickets() { ticketRepository.deleteAll();
+    public void deleteAllTickets() {
+        ticketRepository.deleteAll();
     }
 
     @Override
@@ -62,7 +63,7 @@ public class TicketServiceImpl implements TicketService {
 
         int numberOfTakenSeats = 0;
         for (Ticket item : loadAllTickets()) {
-            if(item.getHall().equals(ticket.getHall())) {
+            if (item.getHall().equals(ticket.getHall())) {
                 numberOfTakenSeats += item.getNumberOfSeats();
             }
         }

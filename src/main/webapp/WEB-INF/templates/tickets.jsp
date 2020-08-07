@@ -14,7 +14,6 @@
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
         <a href="${pageContext.request.contextPath}/" class="navbar-brand">
-            <!-- Logo Image -->
             <img src="/images/strut2-logo.png" width="55" height="40" alt="">
             <span class="text-uppercase font-weight-bold">Apache Struts 2</span>
         </a>
@@ -50,9 +49,9 @@
                 <td><s:property value="language"/></td>
                 <td><s:property value="numberOfSeats"/></td>
                 <td><s:property value="hall"/></td>
-                <td  >
-                    <s:form class="submit-form" method="post"  action="deleteTicket" object="ticket">
-                       <s:hidden name="id" value="%{id}"/>
+                <td>
+                    <s:form class="submit-form" method="post" action="deleteTicket" object="ticket">
+                        <s:hidden name="id" value="%{id}"/>
 
                         <s:submit class="button_a" value="Smazat"/>
                     </s:form></td>
@@ -75,7 +74,6 @@
         <button class="button_a" type="submit">Smazat Vse</button>
     </s:form>
 </div>
-
 
 
 </body>

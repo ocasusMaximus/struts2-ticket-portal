@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 public class DeleteTicketAction extends ActionSupport {
 
 
-
     private int id;
 
 
@@ -52,8 +51,6 @@ public class DeleteTicketAction extends ActionSupport {
         ticketService.deleteAllTickets();
         return SUCCESS;
     }
-
-
 
 
     public int getId() {

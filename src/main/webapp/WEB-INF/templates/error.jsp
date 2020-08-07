@@ -14,7 +14,6 @@
     <nav class="navbar navbar-expand-lg py-3 shadow-sm">
         <div class="container">
             <a href="${pageContext.request.contextPath}/" class="navbar-brand">
-                <!-- Logo Image -->
                 <img src="/images/strut2-logo.png" width="55" height="40" alt="">
                 <span class="text-uppercase font-weight-bold">Apache Struts 2</span>
             </a>

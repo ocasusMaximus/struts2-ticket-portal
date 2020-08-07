@@ -1,7 +1,6 @@
 package cz.uhk.fim.db;
 
 
-
 import cz.uhk.fim.model.Ticket;
 
 import java.util.Date;

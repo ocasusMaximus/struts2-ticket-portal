@@ -16,25 +16,21 @@
         </global-results>
 
         <global-exception-mappings>
-            <exception-mapping exception="java.lang.Exception" result="error" />
+            <exception-mapping exception="java.lang.Exception" result="error"/>
         </global-exception-mappings>
 
         <action name="" method="listTickets" class="cz.uhk.fim.actions.ShowPage">
             <result name="success">/WEB-INF/templates/tickets.jsp</result>
-
         </action>
         <action name="addTicket" method="listHalls" class="cz.uhk.fim.actions.ShowPage">
             <result name="success">/WEB-INF/templates/addTicket.jsp</result>
-
         </action>
         <action name="editTicket" class="cz.uhk.fim.actions.EditTicketAction" method="edit">
             <result name="success">/WEB-INF/templates/editTicket.jsp</result>
-
         </action>
 
         <action name="updateTicket" method="update" class="cz.uhk.fim.actions.UpdateTicketAction">
             <result name="success" type="redirect">/</result>
-
         </action>
         <action name="createTicket" method="create" class="cz.uhk.fim.actions.CreateTicketAction">
             <result name="success" type="redirect">/</result>
@@ -46,13 +42,8 @@
 
         <action name="deleteAllTickets" method="deleteAllTickets" class="cz.uhk.fim.actions.DeleteTicketAction">
             <result name="success" type="redirect">/</result>
-
         </action>
-
-
     </package>
-
-
 
 
 </struts>

@@ -14,7 +14,6 @@
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
         <a href="${pageContext.request.contextPath}/" class="navbar-brand">
-            <!-- Logo Image -->
             <img src="/images/strut2-logo.png" width="55" height="40" alt="">
             <span class="text-uppercase font-weight-bold">Apache Struts 2</span>
         </a>
@@ -35,61 +34,61 @@
 </nav>
 
 
-    <div class="row justify-content-center">
-        <s:form   action="createTicket" method="post">
+<div class="row justify-content-center">
+    <s:form action="createTicket" method="post">
 
 
-            <div class="row justify-content-center">
-                <h1>Nová rezervace</h1>
-            </div>
+        <div class="row justify-content-center">
+            <h1>Nová rezervace</h1>
+        </div>
 
-            <s:hidden name="ticket.id"/>
-            <label>Film: </label>
-            <select class="custom-select custom-select-sm mb-3" name="ticket.movie">
-                <option value="Star Wars: Pomsta Sithů">Star Wars: Pomsta Sithů</option>
-                <option value="Avengers Endgame">Avengers Endgame</option>
-                <option value="Pulp Fiction">Pulp Fiction</option>
-                <option value="John Wick">John Wick</option>
-            </select>
-            <label>Jazyk: </label>
-            <select class="custom-select custom-select-sm mb-3" name="ticket.language">
-                <option value="Angličtina">Angličtina</option>
-                <option value="Čeština">Čeština</option>
-            </select>
-            <label>Sál: </label>
-            <select class="custom-select custom-select-sm mb-3" name="ticket.hall">
-                <option value="J2">J2</option>
-                <option value="J3">J3</option>
-            </select>
-            <label>Počet míst: </label>
-            <input class="form-control form-control-sm" min="1" required name="ticket.numberOfSeats"
-                   type="number">
-            <div class="row justify-content-center">
-                <input type="submit" class="button_b" value="Odeslat"/>
-            </div>
-            <div class="row justify-content-center">
-                <input type="reset" class="button_b" value="Reset"/>
+        <s:hidden name="ticket.id"/>
+        <label>Film: </label>
+        <select class="custom-select custom-select-sm mb-3" name="ticket.movie">
+            <option value="Star Wars: Pomsta Sithů">Star Wars: Pomsta Sithů</option>
+            <option value="Avengers Endgame">Avengers Endgame</option>
+            <option value="Pulp Fiction">Pulp Fiction</option>
+            <option value="John Wick">John Wick</option>
+        </select>
+        <label>Jazyk: </label>
+        <select class="custom-select custom-select-sm mb-3" name="ticket.language">
+            <option value="Angličtina">Angličtina</option>
+            <option value="Čeština">Čeština</option>
+        </select>
+        <label>Sál: </label>
+        <select class="custom-select custom-select-sm mb-3" name="ticket.hall">
+            <option value="J2">J2</option>
+            <option value="J3">J3</option>
+        </select>
+        <label>Počet míst: </label>
+        <input class="form-control form-control-sm" min="1" required name="ticket.numberOfSeats"
+               type="number">
+        <div class="row justify-content-center">
+            <input type="submit" class="button_b" value="Odeslat"/>
+        </div>
+        <div class="row justify-content-center">
+            <input type="reset" class="button_b" value="Reset"/>
 
-            </div>
+        </div>
 
-        </s:form>
-    </div>
-    <div>
-        <table class="table-list">
-            <thead>
-            <th>Sál</th>
-            <th>Kapacita</th>
-            </thead>
-            <tbody>
-            <s:iterator value="hallList">
-                <tr>
-                    <td><s:property value="name"/></td>
-                    <td><s:property value="capacity"/></td>
-                </tr>
-            </s:iterator>
-            </tbody>
+    </s:form>
+</div>
+<div>
+    <table class="table-list">
+        <thead>
+        <th>Sál</th>
+        <th>Kapacita</th>
+        </thead>
+        <tbody>
+        <s:iterator value="hallList">
+            <tr>
+                <td><s:property value="name"/></td>
+                <td><s:property value="capacity"/></td>
+            </tr>
+        </s:iterator>
+        </tbody>
 
-        </table>
-    </div>
+    </table>
+</div>
 </body>
 </html>
